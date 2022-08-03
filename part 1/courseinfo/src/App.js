@@ -27,28 +27,27 @@ const Header = (props) => {
 }
 
 export default function App() { 
-    let course ='Half Stack application development'
-    let parts = [
-         {
+    const course ='Half Stack application development'
+    const part1 = {
             title: 'Fundamentals of React',
             exercises: 10
-         },
-         {
+         }
+    const part2 = {
            title: 'Using props to pass data',
            exercises: 7
-         },
-         {
+         }
+    const part3 = {
            title: 'State of a component',
            exercises: 14
          }
-        ]
+        
  
-let exercisesSum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+let exercisesSum = part1.exercises + part2.exercises + part3.exercises
 
   return (
     <div className="App">
       <Header course={course} />
-      <Content parts={parts} />
+      <Content parts={[part1, part2, part3]} />
       <Total exercisesSum={exercisesSum}/>
     </div>
   );
