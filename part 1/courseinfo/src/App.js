@@ -27,8 +27,9 @@ const Header = (props) => {
 }
 
 export default function App() { 
-    const course ='Half Stack application development'
-    const parts = [
+    const course = {
+      name: 'Half Stack application development',
+      parts: [
     {
             title: 'Fundamentals of React',
             exercises: 10
@@ -42,13 +43,14 @@ export default function App() {
            exercises: 14
          }
     ]
+  }
  
-let exercisesSum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+let exercisesSum = course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises
 
   return (
     <div className="App">
-      <Header course={course} />
-      <Content parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
       <Total exercisesSum={exercisesSum}/>
     </div>
   );
