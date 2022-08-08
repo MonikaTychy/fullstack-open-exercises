@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
 const StatisticLine = (props) => {
-  return <p>{props.text} {props.value}{props.sign}</p>
+  return (
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.value}{props.sign}</td>
+    </tr>
+  );
 }
 
 const Statistics = (props) => {
@@ -11,15 +16,17 @@ const Statistics = (props) => {
 
   if (all > 0) {
   return (
-      <div className='Statistics'>
-        <h2>Statistics:</h2>
-        <StatisticLine text='good' value={props.good} />
-        <StatisticLine text='neutral' value={props.neutral} />
-        <StatisticLine text='bad' value={props.bad} />
-        <StatisticLine text='all' value={all} />
-        <StatisticLine text='average' value={average} />
-        <StatisticLine text='positive' value={positive} sign='%'/>
-      </div>
+    <div className='Statistics'>
+      <h2>statistics</h2>
+        <table>
+         <StatisticLine text='good' value={props.good} />
+         <StatisticLine text='neutral' value={props.neutral} />
+         <StatisticLine text='bad' value={props.bad} />
+         <StatisticLine text='all' value={all} />
+         <StatisticLine text='average' value={average} />
+         <StatisticLine text='positive' value={positive} sign='%'/>
+        </table>
+    </div>
   );
   } else {
     return (
